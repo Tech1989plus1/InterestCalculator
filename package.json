@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server/index.js",
-    "dev": "webpack --watch",
-    "build": "webpack --config webpack.config.js"
+    "dev": "webpack --watch -d",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "@babel/preset-react": "^7.12.1",
     "babel-loader": "^8.1.0",
     "nodemon": "^2.0.5",
-    "webpack": "^5.1.3",
-    "webpack-cli": "^4.0.0"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }
