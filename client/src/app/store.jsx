@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import calReducer from '../components/features/calculate/calSlice.jsx';
+import financeReducer from '../components/features/calculate/financeSlice.jsx';
 
 export default configureStore ({
   reducer: {
-    principalWithInterest: calReducer
+    financeData: financeReducer
   }
 });

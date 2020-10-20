@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 
-import { postCalculateData } from './calSlice.jsx';
+import { postFinanceData } from './financeSlice.jsx';
 
-const AddCalForm = () => {
+const AddFinanceForm = () => {
   const [principal, setPrincipal] = useState('');
   const [rate, setRate] = useState('');
   const [years, setYears] = useState('');
@@ -19,17 +19,13 @@ const AddCalForm = () => {
   const onCalClicked = () => {
     if (principal && rate && years) {
       dispatch(
-        postCalculateData({
+        postFinanceData({
           id: nanoid(),
           principal, 
           rate, 
           years
         })
       );
-
-      setPrincipal('');
-      setRate('');
-      setYears('');
     }
   }
 
@@ -37,15 +33,33 @@ const AddCalForm = () => {
     <section>
       <form>
         <label htmlFor="calPrincipal">Starting Principal</label>
-        <input type="text" id="calPrincipal" name="calPrincipal" value={principal} onChange={onPrincipalChanged}></input>
+        <input 
+          type="number" 
+          id="financePrincipal" 
+          name="financePrincipal"
+          value={principal} 
+          onChange={onPrincipalChanged}
+        ></input>
         <label htmlFor="calRate">Interest Rate</label>
-        <input type="text" id="calRate" name="calRate" value={rate} onChange={onRateChanged}></input>
+        <input 
+          type="number" 
+          id="financeRate" 
+          name="financeRate" 
+          value={rate} 
+          onChange={onRateChanged}
+        ></input>
         <label htmlFor="calYears">Years</label>
-        <input type="text" id="calYears" name="calYears" value={years} onChange={onYearsChanged}></input>
+        <input 
+          type="number" 
+          id="financeYears" 
+          name="financeYears" 
+          value={years} 
+          onChange={onYearsChanged}
+        ></input>
         <button type="button" onClick={onCalClicked}>Calculate</button>
       </form>
     </section>
   );
 }
 
-export default AddCalForm;
+export default AddFinanceForm;
