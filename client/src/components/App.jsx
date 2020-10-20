@@ -1,16 +1,15 @@
 import React from 'react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+import Header from './Header.jsx';
 
-  render() {
-    return(
-      <div>Hello in app</div>
-    )
-  }
+const App = () => {
+  return (
+    <div className="App">
+      <React.Fragment>
+        <Header/>
+      </React.Fragment>
+    </div>
+  );
 }
 
 export default App;
