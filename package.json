@@ -1,0 +1,49 @@
+{
+  "name": "InterestCalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "jest",
+    "test:watch":"npm test -- --watch",
+    "start": "node ./server/index.js",
+    "dev": "webpack --watch -d",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tech1989plus1/InterestCalculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tech1989plus1/InterestCalculator/issues"
+  },
+  "homepage": "https://github.com/Tech1989plus1/InterestCalculator#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "express": "^4.17.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-jest": "^26.6.0",
+    "babel-loader": "^8.1.0",
+    "jest": "^26.6.0",
+    "nodemon": "^2.0.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }, 
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  }
+}
