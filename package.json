@@ -4,8 +4,9 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/index.js",
+    "test": "jest",
+    "test:watch":"npm test -- --watch",
+    "start": "node ./server/index.js",
     "dev": "webpack --watch -d",
     "build": "webpack"
   },
@@ -32,9 +33,17 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
+    "babel-jest": "^26.6.0",
     "babel-loader": "^8.1.0",
+    "jest": "^26.6.0",
     "nodemon": "^2.0.5",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  }, 
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   }
 }
