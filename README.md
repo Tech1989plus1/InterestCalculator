@@ -1,7 +1,7 @@
 # InterestCalculator
 
 ### Task
-> building a simple interest calculator that, given a principal, rante of annual interest, and numbers of years, will display the total principal plust interest. 
+> build a simple interest calculator that, given a principal, rate of annual interest, and number of years, will display the total principal plus interest.
 
 ### Frameworks
   - React
