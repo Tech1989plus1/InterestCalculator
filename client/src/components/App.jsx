@@ -1,16 +1,18 @@
 import React from 'react';
 
-import Header from './Header.jsx';
-import AddFinanceForm from './features/calculate/AddFinanceForm.jsx';
-import PostFinance from './features/calculate/PostFinance.jsx';
+import Header from './features/header/Header.jsx';
+import AddFinanceForm from './features/finance/AddFinanceForm.jsx';
+import PostFinance from './features/finance/PostFinance.jsx';
 
 const App = () => {
   return (
     <div className="App">
       <React.Fragment>
         <Header/>
-        <AddFinanceForm/>
-        <PostFinance/>
+        <section className="flex">
+          <AddFinanceForm/>
+          <PostFinance/>
+        </section>
       </React.Fragment>
     </div>
   );

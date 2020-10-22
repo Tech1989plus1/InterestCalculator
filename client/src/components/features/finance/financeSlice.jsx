@@ -1,10 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
+
+const startValue = Number(0).toFixed(2);
 
 const initialState = {
-  id: '0', 
-  endBalance: 0, 
-  totalPrincipal: 0, 
-  totalInterest: 0
+  id: 0, 
+  endBalance: startValue, 
+  totalPrincipal: startValue, 
+  totalInterest: startValue
 };
 
 const financeSlice = createSlice({
@@ -15,10 +17,11 @@ const financeSlice = createSlice({
       const financeData = action.payload;
       
       const rate = financeData.rate / 100;
+      const principal = Number(financeData.principal).toFixed(2);
       const total = Number.parseFloat(financeData.principal * (1 + (rate * financeData.years))).toFixed(2);
       const totalInterest = Number.parseFloat(total - financeData.principal).toFixed(2)
 
-      return {endBalance: total, totalPrincipal: financeData.principal, totalInterest:totalInterest};
+      return {id: nanoid(), endBalance: total, totalPrincipal: principal, totalInterest:totalInterest};
     }
   }
 });

@@ -5,7 +5,7 @@ const PostFinance = () => {
   const result = useSelector(state => state.financeData);
 
   return (
-    <div>
+    <div id="rightColumn">
       <h4>End Balance ${result.endBalance}</h4>
       <p>Total Principal ${result.totalPrincipal}</p>
       <p>Total Interest ${result.totalInterest}</p>

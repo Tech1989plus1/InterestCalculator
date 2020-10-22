@@ -29,10 +29,25 @@ const AddFinanceForm = () => {
     }
   }
 
+  const onResetClicked = () => {
+    dispatch(
+      postFinanceData({
+        id: nanoid(),
+        principal: 0,
+        rate: 0, 
+        years: 0 
+      })
+    );
+
+    setPrincipal('');
+    setRate('');
+    setYears('');
+  }
+
   return (
-    <section>
-      <form>
-        <label htmlFor="calPrincipal">Starting Principal</label>
+    <section id="leftColumn">
+      <form id="formFlex">
+        <label htmlFor="financePrincipal">Starting Principal</label>
         <input 
           type="number" 
           id="financePrincipal" 
@@ -40,7 +55,7 @@ const AddFinanceForm = () => {
           value={principal} 
           onChange={onPrincipalChanged}
         ></input>
-        <label htmlFor="calRate">Interest Rate</label>
+        <label htmlFor="financeRate">Interest Rate</label>
         <input 
           type="number" 
           id="financeRate" 
@@ -48,7 +63,7 @@ const AddFinanceForm = () => {
           value={rate} 
           onChange={onRateChanged}
         ></input>
-        <label htmlFor="calYears">Years</label>
+        <label htmlFor="financeYears">Years</label>
         <input 
           type="number" 
           id="financeYears" 
@@ -56,7 +71,10 @@ const AddFinanceForm = () => {
           value={years} 
           onChange={onYearsChanged}
         ></input>
-        <button type="button" onClick={onCalClicked}>Calculate</button>
+        <div>
+          <button type="button" onClick={onCalClicked}>Calculate</button>
+          <button type="button" onClick={onResetClicked}>Reset</button>
+        </div>
       </form>
     </section>
   );
